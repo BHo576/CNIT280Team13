@@ -52,7 +52,18 @@
   <input type="time" id="end time" name="end time">
   <label for="text">Expected Attendance</label>
   <input type="text" id="size" name="size">
-  <input type ="button" value = "Next" onclick="location.href='paymentScreen.html';">
+  <input type ="button" value = "Next" onclick="validateTime();"/>
+  <script>
+    function validateTime() {
+        let startTime = document.getElementById("start time").value;
+        
+        if (startTime === "14:00") {
+            alert("Error: An event is already scheduled for this time.");
+        } else {
+            location.href = 'paymentScreen.html';
+        }
+    }
+  </script>
 </form>
 <input type ="button" value = "Back" onclick="location.href='rooms.html';">
 </body>
