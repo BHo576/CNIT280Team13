@@ -65,7 +65,7 @@
       function validatePayment() {
           let startTime = document.getElementById("cardnum").value;
           
-          if (startTime !== "1111-2222-3333-4444") {
+          if (startTime === "1111-2222-3333-4444") {
               alert("Error: Payment information could not be validated.");
           } else {
               location.href = 'receipt.html';
