@@ -29,20 +29,46 @@
   <h1>Confirm Reservation</h1>
   <form>
     <p>Event: Joker Stoning</p>
+    <p>Bookee: Mitch Daniels</p>
+    <p>Organization: None</p>
     <p>Venue: Convention Center</p>
     <p>Room: Bat Cave</p>
     <p>Date: 3/1/25</p>
     <p>Time: 4pm-6pm (2 hrs)</p>
     <p>Expected Attendance: 100</p>
     <h2>Payment</h2>
+    <label for="card type">Card:</label>
+    <select id="card type" name="card type">
+      <option value="blank"></option>
+      <option value="visa">Visa</option>
+      <option value="mastercard">Mastercard</option>
+      <option value="discover">Discover</option>
+    </select>
+    <br>
+    <br>
+    <label for="text">Name of Cardholder:</label>
+    <input type="text" id="text" name="text">
+    <br>
+    <br>
+    <label for="text">Card Number:</label>
+    <input type="text" id="cardnum" name="text">
+    <br>
+    <br>
+    <label for="text">Security Code:</label>
+    <input type="text" id="text" name="text">
+    <br>
+    <br>
+    <p>Total: $300.00</p>
+    <input type ="button" value = "Edit Reservation" onclick="location.href='bookRoom.html';">
+    <input type ="button" value = "Book Event" onclick="validatePayment();"/>
     <script>
-      function validateTime() {
-          let startTime = document.getElementById("start time").value;
+      function validatePayment() {
+          let startTime = document.getElementById("cardnum").value;
           
-          if (startTime === "14:00") {
-              alert("Error: An event is already scheduled for this time.");
+          if (startTime !== "1111-2222-3333-4444") {
+              alert("Error: Payment information could not be validated.");
           } else {
-              location.href = 'paymentScreen.html';
+              location.href = 'receipt.html';
           }
       }
     </script>
